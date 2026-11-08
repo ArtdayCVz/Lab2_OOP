@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.example.com/planes"
+           targetNamespace="http://www.example.com/planes"
+           elementFormDefault="qualified">
+
+  <xs:element name="Planes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Plane" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Plane" type="PlaneDescription"/>
+
+  <xs:complexType name="PlaneDescription">
+    <xs:sequence>
+      <xs:element name="Model" type="NonEmptyString"/>
+      <xs:element name="Origin" type="NonEmptyString"/>
+      <xs:element name="Chars" type="CharsType"/>
+      <xs:element name="Parameters" type="ParametersType"/>
+      <xs:element name="Price" type="PriceType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="PlaneId" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="CharsType">
+    <xs:sequence>
+      <xs:element name="Type" type="PlaneKind"/>
+      <xs:element name="Seats" type="SeatsCount"/>
+      <xs:element name="Ammunition" type="AmmunitionType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AmmunitionType">
+    <xs:sequence>
+      <xs:element name="Missiles" type="MissilesCount"/>
+      <xs:element name="Radar" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParametersType">
+    <xs:sequence>
+      <xs:element name="Length" type="Dimension"/>
+      <xs:element name="Width" type="Dimension"/>
+      <xs:element name="Height" type="Dimension"/>
+    </xs:sequence>
+    <xs:attribute name="unit" type="xs:string" use="required" fixed="m"/>
+  </xs:complexType>
+
+  <xs:complexType name="PriceType">
+    <xs:simpleContent>
+      <xs:extension base="MoneyAmount">
+        <xs:attribute name="currency" type="xs:string" use="required" fixed="thaler"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="PlaneId">
+    <xs:restriction base="xs:ID">
+      <xs:pattern value="P[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:token">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PlaneKind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="support"/>
+      <xs:enumeration value="escort"/>
+      <xs:enumeration value="fighter"/>
+      <xs:enumeration value="interceptor"/>
+      <xs:enumeration value="recon"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SeatsCount">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MissilesCount">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Dimension">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MoneyAmount">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

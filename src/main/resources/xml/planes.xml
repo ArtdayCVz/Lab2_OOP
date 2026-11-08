@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Planes xmlns="http://www.example.com/planes"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.example.com/planes planes.xsd">
+  <Plane id="P001">
+    <Model>Supermarine Spitfire Mk IX</Model>
+    <Origin>United Kingdom</Origin>
+    <Chars>
+      <Type>fighter</Type>
+      <Seats>1</Seats>
+      <Ammunition>
+        <Missiles>0</Missiles>
+        <Radar>false</Radar>
+      </Ammunition>
+    </Chars>
+    <Parameters unit="m">
+      <Length>9.54</Length>
+      <Width>11.23</Width>
+      <Height>3.86</Height>
+    </Parameters>
+    <Price currency="thaler">9800.00</Price>
+  </Plane>
+  <Plane id="P002">
+    <Model>Messerschmitt Bf 109G-6</Model>
+    <Origin>Germany</Origin>
+    <Chars>
+      <Type>fighter</Type>
+      <Seats>1</Seats>
+      <Ammunition>
+        <Missiles>0</Missiles>
+        <Radar>false</Radar>
+      </Ammunition>
+    </Chars>
+    <Parameters unit="m">
+      <Length>8.85</Length>
+      <Width>9.92</Width>
+      <Height>2.50</Height>
+    </Parameters>
+    <Price currency="thaler">8700.00</Price>
+  </Plane>
+  <Plane id="P003">
+    <Model>North American P-51D Mustang</Model>
+    <Origin>USA</Origin>
+    <Chars>
+      <Type>escort</Type>
+      <Seats>1</Seats>
+      <Ammunition>
+        <Missiles>0</Missiles>
+        <Radar>false</Radar>
+      </Ammunition>
+    </Chars>
+    <Parameters unit="m">
+      <Length>9.83</Length>
+      <Width>11.28</Width>
+      <Height>4.17</Height>
+    </Parameters>
+    <Price currency="thaler">11500.00</Price>
+  </Plane>
+  <Plane id="P004">
+    <Model>Ilyushin Il-2</Model>
+    <Origin>USSR</Origin>
+    <Chars>
+      <Type>support</Type>
+      <Seats>2</Seats>
+      <Ammunition>
+        <Missiles>8</Missiles>
+        <Radar>false</Radar>
+      </Ammunition>
+    </Chars>
+    <Parameters unit="m">
+      <Length>11.65</Length>
+      <Width>14.60</Width>
+      <Height>4.17</Height>
+    </Parameters>
+    <Price currency="thaler">6300.00</Price>
+  </Plane>
+  <Plane id="P005">
+    <Model>Messerschmitt Me 163B Komet</Model>
+    <Origin>Germany</Origin>
+    <Chars>
+      <Type>interceptor</Type>
+      <Seats>1</Seats>
+      <Ammunition>
+        <Missiles>0</Missiles>
+        <Radar>false</Radar>
+      </Ammunition>
+    </Chars>
+    <Parameters unit="m">
+      <Length>5.85</Length>
+      <Width>9.33</Width>
+      <Height>2.76</Height>
+    </Parameters>
+    <Price currency="thaler">14200.00</Price>
+  </Plane>
+  <Plane id="P006">
+    <Model>Hawker Typhoon Mk IB</Model>
+    <Origin>United Kingdom</Origin>
+    <Chars>
+      <Type>support</Type>
+      <Seats>1</Seats>
+      <Ammunition>
+        <Missiles>8</Missiles>
+        <Radar>false</Radar>
+      </Ammunition>
+    </Chars>
+    <Parameters unit="m">
+      <Length>9.73</Length>
+      <Width>12.67</Width>
+      <Height>4.66</Height>
+    </Parameters>
+    <Price currency="thaler">10400.00</Price>
+  </Plane>
+  <Plane id="P007">
+    <Model>Fieseler Fi 156 Storch</Model>
+    <Origin>Germany</Origin>
+    <Chars>
+      <Type>recon</Type>
+      <Seats>2</Seats>
+    </Chars>
+    <Parameters unit="m">
+      <Length>9.90</Length>
+      <Width>14.25</Width>
+      <Height>3.05</Height>
+    </Parameters>
+    <Price currency="thaler">3100.00</Price>
+  </Plane>
+  <Plane id="P008">
+    <Model>de Havilland Mosquito NF Mk II</Model>
+    <Origin>United Kingdom</Origin>
+    <Chars>
+      <Type>interceptor</Type>
+      <Seats>2</Seats>
+      <Ammunition>
+        <Missiles>0</Missiles>
+        <Radar>true</Radar>
+      </Ammunition>
+    </Chars>
+    <Parameters unit="m">
+      <Length>12.34</Length>
+      <Width>16.52</Width>
+      <Height>4.65</Height>
+    </Parameters>
+    <Price currency="thaler">13600.00</Price>
+  </Plane>
+</Planes>
